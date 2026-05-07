@@ -1,0 +1,134 @@
+[
+  {
+    "strategy": "SMA Cross (10/20)",
+    "symbol": "AAPL",
+    "initial_cash": 100000,
+    "final_value": 104410.67120248766,
+    "pnl": 4410.6712024876615,
+    "pnl_pct": 4.410671202487661,
+    "sharpe_ratio": 0.27301750981670514,
+    "max_drawdown": 12.130575094115844,
+    "total_trades": 6
+  },
+  {
+    "strategy": "Enhanced SMA (10/30)",
+    "symbol": "AAPL",
+    "initial_cash": 100000,
+    "final_value": 112490.1921238889,
+    "pnl": 12490.192123888904,
+    "pnl_pct": 12.490192123888905,
+    "sharpe_ratio": 0.4268095124406158,
+    "max_drawdown": 12.195697673042224,
+    "total_trades": 4
+  },
+  {
+    "strategy": "RSI Strategy",
+    "symbol": "AAPL",
+    "initial_cash": 100000,
+    "final_value": 98410.01951406377,
+    "pnl": -1589.980485936234,
+    "pnl_pct": -1.5899804859362339,
+    "sharpe_ratio": -2.2578770731405107,
+    "max_drawdown": 10.748451221639765,
+    "total_trades": 1
+  },
+  {
+    "strategy": "MACD Strategy",
+    "symbol": "AAPL",
+    "initial_cash": 100000,
+    "final_value": 106389.08561650701,
+    "pnl": 6389.0856165070145,
+    "pnl_pct": 6.389085616507015,
+    "sharpe_ratio": 0.47130049740931834,
+    "max_drawdown": 10.066694238056687,
+    "total_trades": 9
+  },
+  {
+    "strategy": "SMA Cross (10/20)",
+    "symbol": "MSFT",
+    "initial_cash": 100000,
+    "final_value": 85069.0042238659,
+    "pnl": -14930.995776134107,
+    "pnl_pct": -14.930995776134107,
+    "sharpe_ratio": -58.40653997826373,
+    "max_drawdown": 17.17126149384361,
+    "total_trades": 5
+  },
+  {
+    "strategy": "Enhanced SMA (10/30)",
+    "symbol": "MSFT",
+    "initial_cash": 100000,
+    "final_value": 90770.1141396359,
+    "pnl": -9229.885860364098,
+    "pnl_pct": -9.229885860364098,
+    "sharpe_ratio": -7.48221345335862,
+    "max_drawdown": 13.016996993552993,
+    "total_trades": 4
+  },
+  {
+    "strategy": "RSI Strategy",
+    "symbol": "MSFT",
+    "initial_cash": 100000,
+    "final_value": 83607.05254075618,
+    "pnl": -16392.94745924382,
+    "pnl_pct": -16.39294745924382,
+    "sharpe_ratio": -0.9340625880001511,
+    "max_drawdown": 26.179587893760427,
+    "total_trades": 1
+  },
+  {
+    "strategy": "MACD Strategy",
+    "symbol": "MSFT",
+    "initial_cash": 100000,
+    "final_value": 81793.13477666175,
+    "pnl": -18206.865223338245,
+    "pnl_pct": -18.206865223338244,
+    "sharpe_ratio": -2.8155883926304663,
+    "max_drawdown": 22.95168477616991,
+    "total_trades": 9
+  },
+  {
+    "strategy": "SMA Cross (10/20)",
+    "symbol": "SPY",
+    "initial_cash": 100000,
+    "final_value": 99744.10023171308,
+    "pnl": -255.89976828692306,
+    "pnl_pct": -0.25589976828692307,
+    "sharpe_ratio": -0.5646304057247109,
+    "max_drawdown": 4.556827682422632,
+    "total_trades": 5
+  },
+  {
+    "strategy": "Enhanced SMA (10/30)",
+    "symbol": "SPY",
+    "initial_cash": 100000,
+    "final_value": 99411.76516907211,
+    "pnl": -588.2348309278896,
+    "pnl_pct": -0.5882348309278895,
+    "sharpe_ratio": -7.730492580562061,
+    "max_drawdown": 2.4496324164467884,
+    "total_trades": 1
+  },
+  {
+    "strategy": "RSI Strategy",
+    "symbol": "SPY",
+    "initial_cash": 100000,
+    "final_value": 108046.87475641142,
+    "pnl": 8046.8747564114165,
+    "pnl_pct": 8.046874756411416,
+    "sharpe_ratio": 0.7514563031558947,
+    "max_drawdown": 1.3154470262628457,
+    "total_trades": 1
+  },
+  {
+    "strategy": "MACD Strategy",
+    "symbol": "SPY",
+    "initial_cash": 100000,
+    "final_value": 98431.35548267263,
+    "pnl": -1568.6445173273678,
+    "pnl_pct": -1.5686445173273678,
+    "sharpe_ratio": -9.541732137578123,
+    "max_drawdown": 8.685247906573931,
+    "total_trades": 12
+  }
+]
