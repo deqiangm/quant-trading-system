@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+
+# Data & Cache
+data/
+results/
+logs/
+*.db
+*.sqlite3
+*.json.bak
+crash_warning_cache.db
+crash_warning_result.json
+
+# Temp reports
+temp_report.txt
+tmp_report.txt
+today_report.txt
+report_cn_*.txt
+report_en_*.txt
+html_reports/
+
+# Social data cache
+social_data/
+
+# Models cache
+models/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Env
+.env
+*.key
