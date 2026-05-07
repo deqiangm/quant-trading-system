@@ -1,0 +1,194 @@
+#!/usr/bin/env python3
+import json
+import os
+import glob
+
+# Find latest V4 report
+report_dir = "/home/deqiangm/.hermes/cron/alpha-stock-finder/reports"
+files = sorted(glob.glob(os.path.join(report_dir, "alpha_scan_v4_*.json")))
+if not files:
+    print("ERROR: No V4 report files found")
+    exit(1)
+
+latest = files[-1]
+print(f"Using report: {latest}", file=__import__('sys').stderr)
+
+with open(latest, 'r') as f:
+    data = json.load(f)
+
+ms = data['market_sentiment']
+cw = data['crash_warning']
+ss_data = {
+    'total_scanned': data['total_scanned'],
+    'alpha_candidates': data['alpha_candidates'],
+    'social_posts_fetched': data['social_posts_fetched'],
+    'tv_tickers_with_data': data['tv_tickers_with_data'],
+    'insider_filings_found': data['insider_filings_found'],
+    'insider_signals_count': data['insider_signals_count'],
+    'mention_spikes': data.get('mention_spikes', []),
+    'llm_sentiment_available': data['llm_sentiment_available']
+}
+layers = cw['layers']
+
+# Top 12 non-ETF picks
+etf_tickers = {'SPY', 'QQQ', 'IWM', 'DIA'}
+non_etf = [p for p in data['top_picks'] if p['ticker'] not in etf_tickers]
+top12 = non_etf[:12]
+
+# High divergence
+high_div = [p for p in data['top_picks'] if p['divergence_label'] == 'high_divergence']
+
+# WSB top mentioned
+wsb_sorted = sorted(data['top_picks'], key=lambda x: x['wsb_mentions'], reverse=True)[:5]
+
+# Build report
+report = "🔍 美股Alpha扫描器 V4.2 崩盘预警增强版\n"
+report += "📅 2026-05-06 06:38\n\n"
+
+report += "━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+report += "📊 市场状态: " + data['market_state_cn'] + "\n"
+report += "━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
+
+report += "┌──────┬────────┬───────┬──────────┬──────────┐\n"
+report += "│ 指数 │ RSI(14)│ ADX   │ 5日涨跌  │ 波动率   │\n"
+report += "├──────┼────────┼───────┼──────────┼──────────┤\n"
+
+for idx in ['SPY', 'QQQ', 'IWM', 'DIA']:
+    d = ms[idx]
+    report += "│ {:4s} │ {:6.1f} │ {:5.1f} │ {:>+6.2f}% │ {:>5.2f}%  │\n".format(
+        idx, d['rsi'], d['adx'], d['price_change_5d'], d['volatility'])
+
+report += "└──────┴────────┴───────┴──────────┴──────────┘\n\n"
+
+report += "📈 四大指数全线看多，QQQ RSI=79.7接近超买，IWM 5日涨幅+4.84%领涨，小盘股补涨信号明显。\n\n"
+
+report += "━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+report += "📋 扫描概况\n"
+report += "━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
+
+report += "• 扫描标的数: {}\n".format(ss_data['total_scanned'])
+report += "• Alpha候选数: {}\n".format(ss_data['alpha_candidates'])
+report += "• 社交帖子数: {}\n".format(ss_data['social_posts_fetched'])
+report += "• TV覆盖数: {}/{}\n".format(ss_data['tv_tickers_with_data'], ss_data['total_scanned'])
+report += "• 内幕交易数: {}\n".format(ss_data['insider_filings_found'])
+report += "• 提及异常: {}\n".format(len(ss_data['mention_spikes']))
+report += "• LLM情绪: ✅ DeepSeek V4 Flash\n\n"
+
+report += "━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+report += "🏆 Top 12 Alpha候选股\n"
+report += "━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
+
+report += "┌──────┬──────┬──────┬──────┬──────┬──────┬──────┬──────────────┐\n"
+report += "│ 代码 │融合分│技术分│社交分│ TV分 │WSB热 │背离值│ 背离标签     │\n"
+report += "├──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────────────┤\n"
+
+div_label_cn = {
+    'aligned': '✅一致',
+    'moderate_divergence': '⚠️中度背离',
+    'high_divergence': '🔴高背离'
+}
+
+for p in top12:
+    dl = div_label_cn.get(p['divergence_label'], p['divergence_label'])
+    report += "│ {:4s} │ {:5.1f} │ {:5.1f} │ {:5.1f} │ {:5.1f} │ {:4d} │ {:5.1f} │{:12s} │\n".format(
+        p['ticker'], p['fused_score'], p['technical_score'], p['social_signal'],
+        p['tv_score'], p['wsb_mentions'], p['divergence'], dl)
+
+report += "└──────┴──────┴──────┴──────┴──────┴──────┴──────┴──────────────┘\n\n"
+
+report += "━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+report += "📝 趋势点评\n"
+report += "━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
+
+report += "🔥 半导体/AI主导榜单: Top 12中半导体及相关标的占7席(INTC/MU/WDC/AVGO/AMD/ARM/STX)，芯片板块延续强势，INTC 20日暴涨86%，AMD 20日涨83%，WDC涨36%，半导体是本轮行情绝对核心。\n\n"
+
+report += "📈 科技巨头集体发力: GOOGL/GOOG双列Top 5，AMZN技术分高达89.5为全榜最高，FAANG+AI概念共振明显。\n\n"
+
+report += "⚠️ 多数个股RSI超买: Top 12中9只RSI>80，INTC(85.6)/MU(86.1)/WDC(85.5)/GOOGL(85.1)极度超买，短期回调压力积聚。\n\n"
+
+report += "🆘 4只高背离个股: TXN/MRVL/LRCX/AMAT技术面强但社交信号为零(50分)，属于\"机构在买、散户没关注\"的隐蔽强势标的。\n\n"
+
+# Crash warning
+report += "━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+report += "🚨 崩盘预警5层评分\n"
+report += "━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
+
+report += "综合评分: {}/100  {}\n".format(cw['composite_score'], cw['warning_level'])
+report += "活跃层数: {}/6\n\n".format(cw['active_layers'])
+
+report += "┌──────────────────┬──────┬─────────────────────────────────────────────────┐\n"
+report += "│ 层级             │ 评分 │ 关键信号                                        │\n"
+report += "├──────────────────┼──────┼─────────────────────────────────────────────────┤\n"
+
+layer_names = {
+    'Market Euphoria': '🎯 市场狂热',
+    'Yield Curve Anomaly': '📉 收益率曲线',
+    'Credit Risk': '💳 信用风险',
+    'Systemic Risk': '🌐 系统性风险',
+    'Technical Extremes': '📊 技术极端',
+    'Social Panic': '📱 社交恐慌'
+}
+
+for key, layer in layers.items():
+    name = layer_names.get(key, key)
+    score = layer['score']
+    signals = '; '.join(layer['signals']) if layer['signals'] else '无异常信号'
+    report += "│{:16s} │ {:4d} │ {:47s} │\n".format(name, score, signals)
+
+report += "└──────────────────┴──────┴─────────────────────────────────────────────────┘\n\n"
+
+# Key risk points
+report += "━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+report += "⚠️ 核心风险要点\n"
+report += "━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
+
+report += "1. 🔴 技术极端层(20分): SPY出现\"价格涨+成交量萎缩\"的看跌背离，20/50日量比仅0.68，上涨缺乏量能支撑\n"
+report += "2. 🟡 市场狂热层(10分): Fear&Greed=67进入\"轻度贪婪\"区间，虽未到极端但方向偏热\n"
+report += "3. 🟡 收益率曲线层(15分): 2024年9月5日最后一次倒挂距今607天，处于1-24月衰退危险窗口期\n"
+report += "4. 🔴 QQQ RSI=79.7逼近80超买线，科技股集中超买增加集体回调风险\n"
+report += "5. 🟢 信用风险/系统性风险/社交恐慌三层均为0分，暂无紧急威胁\n\n"
+
+# Social signal anomalies
+report += "━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+report += "📱 社交信号异常\n"
+report += "━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
+
+report += "🔥 WSB极端热度:\n"
+
+cp_cn_map = {'heavy_calls': '看涨期权密集', 'heavy_puts': '看跌期权密集', 'neutral': '中性'}
+for w in wsb_sorted:
+    cp_cn = cp_cn_map.get(w['cp_signal'], w['cp_signal'])
+    report += "  • {}: {}次提及 | 情绪={:+.3f} | {}\n".format(
+        w['ticker'], w['wsb_mentions'], w['wsb_sentiment'], cp_cn)
+
+report += "\n📌 高背离个股(技术强/社交弱):\n"
+for h in high_div:
+    report += "  • {}: 背离值={:.1f} | 技术={:.1f} vs 社交={:.1f} | 机构暗中介入信号\n".format(
+        h['ticker'], h['divergence'], h['technical_score'], h['social_signal'])
+
+report += "\n🔄 双向关注:\n"
+report += "  • AMD: WSB 406次提及(全榜最高)+看跌期权密集(heavy_puts)，散户狂热但期权市场对冲明显\n"
+report += "  • MU: TV评分93.0(全榜最高)+WSB 153次提及+看跌期权密集，强基本面与分歧情绪并存\n"
+report += "  • INTC: 20日涨幅86%+RSI=85.6，极端超买但社交持续看好，追高需谨慎\n\n"
+
+# Key takeaways
+report += "━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+report += "🎯 要点总结\n"
+report += "━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
+
+report += "1. 📊 市场整体震荡偏多，四大指数RSI均>60，趋势向上但超买信号渐多\n"
+report += "2. 🔥 半导体/AI板块全面爆发，7只芯片股入Top 12，INTC/AMD 20日翻倍级涨幅\n"
+report += "3. 🚨 崩盘预警综合评分10/100(正常)，但技术极端层出现量价背离警告(SPY量比0.68)\n"
+report += "4. ⚠️ Top候选股大面积超买(RSI>80占75%)，短线回调风险显著累积\n"
+report += "5. 🕵️ TXN/MRVL/LRCX/AMAT技术强但零社交覆盖，为\"隐蔽强势\"标的值得关注\n\n"
+
+report += "━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+report += "⚡ V4.2 by Hermes Agent | 数据源: yfinance + Reddit + TradingView + SEC Form4\n"
+
+# Save report to file for sending
+report_file = "/home/deqiangm/.hermes/cron/alpha-stock-finder/today_report.txt"
+with open(report_file, 'w') as f:
+    f.write(report)
+
+print(f"Report saved to {report_file}")
+print(f"Report length: {len(report)} chars")
