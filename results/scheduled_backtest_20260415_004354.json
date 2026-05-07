@@ -1,0 +1,395 @@
+{
+  "timestamp": "2026-04-15T00:43:54.578862",
+  "backtest_period": {
+    "start": "2025-04-15",
+    "end": "2026-04-15",
+    "days": 365
+  },
+  "alpha_candidates": [
+    {
+      "ticker": "WDC",
+      "price": 366.2200012207031,
+      "score": 160,
+      "signals": [
+        "\u63a5\u8fd152\u5468\u65b0\u9ad8 ($366.22 vs $366.30)",
+        "\u5355\u65e5\u6da8\u5e45 4.6%",
+        "5\u65e5\u6da8\u5e45 17.4%",
+        "20\u65e5\u6da8\u5e45 28.0%",
+        "MACD\u591a\u5934\u6392\u5217",
+        "\u77ed\u671f\u5747\u7ebf\u91d1\u53c9",
+        "RSI\u5065\u5eb7\u533a\u95f4 (69)",
+        "\u7a81\u7834\u5e03\u6797\u5e26\u4e0a\u8f68"
+      ],
+      "rsi": 68.6,
+      "macd_hist": 7.2449,
+      "price_change_5d": 17.39,
+      "price_change_20d": 27.96,
+      "volume_ratio": 0.8254221320385535,
+      "market_cap": 125210361856,
+      "pe_ratio": 34.61437
+    },
+    {
+      "ticker": "KLAC",
+      "price": 1795.9100341796875,
+      "score": 140,
+      "signals": [
+        "\u63a5\u8fd152\u5468\u65b0\u9ad8 ($1795.91 vs $1798.00)",
+        "5\u65e5\u6da8\u5e45 16.0%",
+        "20\u65e5\u6da8\u5e45 24.9%",
+        "MACD\u591a\u5934\u6392\u5217",
+        "\u77ed\u671f\u5747\u7ebf\u91d1\u53c9",
+        "RSI\u5065\u5eb7\u533a\u95f4 (69)",
+        "\u7a81\u7834\u5e03\u6797\u5e26\u4e0a\u8f68"
+      ],
+      "rsi": 69.0,
+      "macd_hist": 33.3166,
+      "price_change_5d": 15.95,
+      "price_change_20d": 24.87,
+      "volume_ratio": 0.9401621566071515,
+      "market_cap": 235968806912,
+      "pe_ratio": 52.358894
+    },
+    {
+      "ticker": "AMZN",
+      "price": 249.02000427246094,
+      "score": 135,
+      "signals": [
+        "\u63a5\u8fd152\u5468\u65b0\u9ad8 ($249.02 vs $252.18)",
+        "\u6210\u4ea4\u91cf\u589e\u957f 1.6x",
+        "\u5355\u65e5\u6da8\u5e45 3.8%",
+        "5\u65e5\u6da8\u5e45 16.5%",
+        "MACD\u591a\u5934\u6392\u5217",
+        "\u77ed\u671f\u5747\u7ebf\u91d1\u53c9",
+        "\u7a81\u7834\u5e03\u6797\u5e26\u4e0a\u8f68"
+      ],
+      "rsi": 80.7,
+      "macd_hist": 4.657,
+      "price_change_5d": 16.49,
+      "price_change_20d": 17.61,
+      "volume_ratio": 1.5656113912903395,
+      "market_cap": 2678023782400,
+      "pe_ratio": 34.730824
+    },
+    {
+      "ticker": "STX",
+      "price": 533.4400024414062,
+      "score": 130,
+      "signals": [
+        "\u63a5\u8fd152\u5468\u65b0\u9ad8 ($533.44 vs $534.23)",
+        "\u5355\u65e5\u6da8\u5e45 3.9%",
+        "5\u65e5\u6da8\u5e45 13.8%",
+        "20\u65e5\u6da8\u5e45 34.0%",
+        "MACD\u591a\u5934\u6392\u5217",
+        "\u77ed\u671f\u5747\u7ebf\u91d1\u53c9"
+      ],
+      "rsi": 73.2,
+      "macd_hist": 12.3432,
+      "price_change_5d": 13.81,
+      "price_change_20d": 34.0,
+      "volume_ratio": 0.902362988080637,
+      "market_cap": 119504093184,
+      "pe_ratio": 60.207676
+    },
+    {
+      "ticker": "AMD",
+      "price": 255.07000732421875,
+      "score": 120,
+      "signals": [
+        "\u5355\u65e5\u6da8\u5e45 3.3%",
+        "5\u65e5\u6da8\u5e45 15.1%",
+        "20\u65e5\u6da8\u5e45 29.8%",
+        "MACD\u591a\u5934\u6392\u5217",
+        "\u77ed\u671f\u5747\u7ebf\u91d1\u53c9",
+        "\u7a81\u7834\u5e03\u6797\u5e26\u4e0a\u8f68"
+      ],
+      "rsi": 75.3,
+      "macd_hist": 5.2652,
+      "price_change_5d": 15.14,
+      "price_change_20d": 29.75,
+      "volume_ratio": 0.7597361913835865,
+      "market_cap": 415868911616,
+      "pe_ratio": 98.10385
+    }
+  ],
+  "results": [
+    {
+      "symbol": "WDC",
+      "strategy": "SmaCross",
+      "initial_cash": 100000,
+      "final_value": 169632.0591238466,
+      "pnl": 69632.05912384659,
+      "pnl_pct": 69.63205912384659,
+      "sharpe_ratio": 1.0103900156602237,
+      "max_drawdown": 28.151166472783018,
+      "total_trades": 3,
+      "status": "success"
+    },
+    {
+      "symbol": "WDC",
+      "strategy": "EnhancedSmaCross",
+      "initial_cash": 100000,
+      "final_value": 116860.75717318726,
+      "pnl": 16860.75717318726,
+      "pnl_pct": 16.86075717318726,
+      "sharpe_ratio": 0.8813813650563397,
+      "max_drawdown": 17.389693739288326,
+      "total_trades": 1,
+      "status": "success"
+    },
+    {
+      "symbol": "WDC",
+      "strategy": "RSIStrategy",
+      "initial_cash": 100000,
+      "final_value": 100000.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "sharpe_ratio": null,
+      "max_drawdown": 0.0,
+      "total_trades": 0,
+      "status": "success"
+    },
+    {
+      "symbol": "WDC",
+      "strategy": "MACDStrategy",
+      "initial_cash": 100000,
+      "final_value": 238507.37320121727,
+      "pnl": 138507.37320121727,
+      "pnl_pct": 138.50737320121726,
+      "sharpe_ratio": 3.063085307816871,
+      "max_drawdown": 16.341225694828196,
+      "total_trades": 8,
+      "status": "success"
+    },
+    {
+      "symbol": "KLAC",
+      "strategy": "SmaCross",
+      "initial_cash": 100000,
+      "final_value": 124412.04062906437,
+      "pnl": 24412.040629064373,
+      "pnl_pct": 24.412040629064375,
+      "sharpe_ratio": 0.8348322902656714,
+      "max_drawdown": 28.52780446380826,
+      "total_trades": 6,
+      "status": "success"
+    },
+    {
+      "symbol": "KLAC",
+      "strategy": "EnhancedSmaCross",
+      "initial_cash": 100000,
+      "final_value": 146531.4105863635,
+      "pnl": 46531.41058636349,
+      "pnl_pct": 46.53141058636349,
+      "sharpe_ratio": 2.5311476017731067,
+      "max_drawdown": 26.055149710572504,
+      "total_trades": 4,
+      "status": "success"
+    },
+    {
+      "symbol": "KLAC",
+      "strategy": "RSIStrategy",
+      "initial_cash": 100000,
+      "final_value": 100000.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "sharpe_ratio": null,
+      "max_drawdown": 0.0,
+      "total_trades": 0,
+      "status": "success"
+    },
+    {
+      "symbol": "KLAC",
+      "strategy": "MACDStrategy",
+      "initial_cash": 100000,
+      "final_value": 124366.64602597532,
+      "pnl": 24366.646025975322,
+      "pnl_pct": 24.36664602597532,
+      "sharpe_ratio": 4.988461405573993,
+      "max_drawdown": 24.051898045426395,
+      "total_trades": 10,
+      "status": "success"
+    },
+    {
+      "symbol": "AMZN",
+      "strategy": "SmaCross",
+      "initial_cash": 100000,
+      "final_value": 100858.00856318593,
+      "pnl": 858.0085631859256,
+      "pnl_pct": 0.8580085631859256,
+      "sharpe_ratio": -0.04708676176157896,
+      "max_drawdown": 17.744931129388107,
+      "total_trades": 6,
+      "status": "success"
+    },
+    {
+      "symbol": "AMZN",
+      "strategy": "EnhancedSmaCross",
+      "initial_cash": 100000,
+      "final_value": 87181.09434602356,
+      "pnl": -12818.905653976442,
+      "pnl_pct": -12.818905653976442,
+      "sharpe_ratio": -2.973790491555895,
+      "max_drawdown": 21.657759832945988,
+      "total_trades": 4,
+      "status": "success"
+    },
+    {
+      "symbol": "AMZN",
+      "strategy": "RSIStrategy",
+      "initial_cash": 100000,
+      "final_value": 117995.90152146778,
+      "pnl": 17995.90152146778,
+      "pnl_pct": 17.99590152146778,
+      "sharpe_ratio": 0.8888635838769093,
+      "max_drawdown": 8.479326254533097,
+      "total_trades": 1,
+      "status": "success"
+    },
+    {
+      "symbol": "AMZN",
+      "strategy": "MACDStrategy",
+      "initial_cash": 100000,
+      "final_value": 103824.50322895814,
+      "pnl": 3824.503228958143,
+      "pnl_pct": 3.8245032289581435,
+      "sharpe_ratio": 0.14980648577512184,
+      "max_drawdown": 15.97592517957261,
+      "total_trades": 12,
+      "status": "success"
+    },
+    {
+      "symbol": "STX",
+      "strategy": "SmaCross",
+      "initial_cash": 100000,
+      "final_value": 155897.0313115672,
+      "pnl": 55897.0313115672,
+      "pnl_pct": 55.897031311567204,
+      "sharpe_ratio": 0.7049328997320071,
+      "max_drawdown": 20.130832641746174,
+      "total_trades": 4,
+      "status": "success"
+    },
+    {
+      "symbol": "STX",
+      "strategy": "EnhancedSmaCross",
+      "initial_cash": 100000,
+      "final_value": 166397.57822034633,
+      "pnl": 66397.57822034633,
+      "pnl_pct": 66.39757822034633,
+      "sharpe_ratio": 0.8625885492552743,
+      "max_drawdown": 24.423743018686505,
+      "total_trades": 3,
+      "status": "success"
+    },
+    {
+      "symbol": "STX",
+      "strategy": "RSIStrategy",
+      "initial_cash": 100000,
+      "final_value": 100000.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "sharpe_ratio": null,
+      "max_drawdown": 0.0,
+      "total_trades": 0,
+      "status": "success"
+    },
+    {
+      "symbol": "STX",
+      "strategy": "MACDStrategy",
+      "initial_cash": 100000,
+      "final_value": 168367.44260909414,
+      "pnl": 68367.44260909414,
+      "pnl_pct": 68.36744260909414,
+      "sharpe_ratio": 5.7832395392948595,
+      "max_drawdown": 26.607092002188704,
+      "total_trades": 9,
+      "status": "success"
+    },
+    {
+      "symbol": "AMD",
+      "strategy": "SmaCross",
+      "initial_cash": 100000,
+      "final_value": 161448.90801368273,
+      "pnl": 61448.908013682725,
+      "pnl_pct": 61.448908013682725,
+      "sharpe_ratio": 1.6748215242850293,
+      "max_drawdown": 24.931057652865398,
+      "total_trades": 4,
+      "status": "success"
+    },
+    {
+      "symbol": "AMD",
+      "strategy": "EnhancedSmaCross",
+      "initial_cash": 100000,
+      "final_value": 140146.32941278076,
+      "pnl": 40146.32941278076,
+      "pnl_pct": 40.146329412780766,
+      "sharpe_ratio": 1.214664588230265,
+      "max_drawdown": 34.438872375697336,
+      "total_trades": 4,
+      "status": "success"
+    },
+    {
+      "symbol": "AMD",
+      "strategy": "RSIStrategy",
+      "initial_cash": 100000,
+      "final_value": 100000.0,
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "sharpe_ratio": null,
+      "max_drawdown": 0.0,
+      "total_trades": 0,
+      "status": "success"
+    },
+    {
+      "symbol": "AMD",
+      "strategy": "MACDStrategy",
+      "initial_cash": 100000,
+      "final_value": 179222.27187033076,
+      "pnl": 79222.27187033076,
+      "pnl_pct": 79.22227187033076,
+      "sharpe_ratio": 1.4239868651361194,
+      "max_drawdown": 24.55876425459287,
+      "total_trades": 7,
+      "status": "success"
+    }
+  ],
+  "summary": {
+    "total_backtests": 20,
+    "successful": 20,
+    "best_return": "+138.51%",
+    "worst_return": "-12.82%",
+    "avg_return": "+35.08%",
+    "top_performers": [
+      {
+        "symbol": "WDC",
+        "strategy": "MACDStrategy",
+        "pnl_pct": 138.50737320121726,
+        "sharpe_ratio": 3.063085307816871
+      },
+      {
+        "symbol": "AMD",
+        "strategy": "MACDStrategy",
+        "pnl_pct": 79.22227187033076,
+        "sharpe_ratio": 1.4239868651361194
+      },
+      {
+        "symbol": "WDC",
+        "strategy": "SmaCross",
+        "pnl_pct": 69.63205912384659,
+        "sharpe_ratio": 1.0103900156602237
+      },
+      {
+        "symbol": "STX",
+        "strategy": "MACDStrategy",
+        "pnl_pct": 68.36744260909414,
+        "sharpe_ratio": 5.7832395392948595
+      },
+      {
+        "symbol": "STX",
+        "strategy": "EnhancedSmaCross",
+        "pnl_pct": 66.39757822034633,
+        "sharpe_ratio": 0.8625885492552743
+      }
+    ]
+  }
+}
