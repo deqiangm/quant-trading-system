@@ -1,0 +1,71 @@
+# Alpha Stock Finder Configuration
+# 发现暴涨股票的多策略系统
+
+# 数据源配置
+data_sources:
+  # Yahoo Finance - 免费、稳定的数据源
+  yahoo_finance:
+    enabled: true
+    rate_limit: 2000  # 每小时请求限制
+    
+  # FinViz - 异动股票数据
+  finviz:
+    enabled: true
+    
+  # TradingView - 技术指标
+  tradingview:
+    enabled: true
+
+# 筛选策略
+strategies:
+  # 策略1: 突破新高策略
+  breakout_new_high:
+    enabled: true
+    params:
+      lookback_days: 52  # 52周新高
+      min_volume_ratio: 2.0  # 成交量至少是平均的2倍
+      
+  # 策略2: 量价异动策略  
+  volume_momentum:
+    enabled: true
+    params:
+      min_price_change: 5.0  # 最小涨幅5%
+      min_volume_change: 100  # 成交量增长100%+
+      market_cap_min: 1e9  # 市值至少10亿美元
+      
+  # 策略3: 技术指标策略
+  technical_signals:
+    enabled: true
+    params:
+      rsi_oversold: 30
+      rsi_overbought: 70
+      macd_signal: true
+      golden_cross: true
+      
+  # 策略4: 新闻情绪策略
+  news_sentiment:
+    enabled: true
+    params:
+      positive_threshold: 0.7
+      news_sources:
+        - reuters
+        - bloomberg
+        - cnbc
+
+# 关注列表 - 用于跟踪已知潜力股
+watch_list:
+  - TSLA   # 特斯拉
+  - NVDA   # 英伟达
+  - META   # Meta
+  - AAPL   # 苹果
+  - MSFT   # 微软
+  - GOOGL  # 谷歌
+  - AMZN   # 亚马逊
+  - AMD    # AMD
+  - SAN    # SanDisk (近期异动)
+
+# 报告配置
+reporting:
+  output_dir: /home/deqiangm/.hermes/cron/alpha-stock-finder/reports
+  format: json,html
+  retention_days: 30
