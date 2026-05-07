@@ -1,0 +1,311 @@
+{
+  "timestamp": "2026-05-02T15:06:49.056596",
+  "backtest_period": {
+    "start": "2025-05-02",
+    "end": "2026-05-02",
+    "days": 365
+  },
+  "alpha_candidates": [
+    {
+      "ticker": "AAPL",
+      "score": 0
+    },
+    {
+      "ticker": "MSFT",
+      "score": 0
+    },
+    {
+      "ticker": "GOOGL",
+      "score": 0
+    },
+    {
+      "ticker": "AMZN",
+      "score": 0
+    },
+    {
+      "ticker": "META",
+      "score": 0
+    }
+  ],
+  "results": [
+    {
+      "symbol": "AAPL",
+      "strategy": "SmaCross",
+      "initial_cash": 100000,
+      "final_value": 113516.41844408514,
+      "pnl": 13516.418444085139,
+      "pnl_pct": 13.516418444085138,
+      "sharpe_ratio": 4.1159930486507905,
+      "max_drawdown": 12.130575573468478,
+      "total_trades": 5,
+      "status": "success"
+    },
+    {
+      "symbol": "AAPL",
+      "strategy": "EnhancedSmaCross",
+      "initial_cash": 100000,
+      "final_value": 121291.233969494,
+      "pnl": 21291.233969494002,
+      "pnl_pct": 21.291233969494,
+      "sharpe_ratio": 0.9265106878673857,
+      "max_drawdown": 12.195697649146673,
+      "total_trades": 4,
+      "status": "success"
+    },
+    {
+      "symbol": "AAPL",
+      "strategy": "RSIStrategy",
+      "initial_cash": 100000,
+      "final_value": 106133.5563738171,
+      "pnl": 6133.556373817104,
+      "pnl_pct": 6.133556373817104,
+      "sharpe_ratio": 0.6739249012958297,
+      "max_drawdown": 10.748451221639765,
+      "total_trades": 1,
+      "status": "success"
+    },
+    {
+      "symbol": "AAPL",
+      "strategy": "MACDStrategy",
+      "initial_cash": 100000,
+      "final_value": 114103.6096893698,
+      "pnl": 14103.609689369798,
+      "pnl_pct": 14.103609689369797,
+      "sharpe_ratio": 9.12854064350422,
+      "max_drawdown": 10.069581380486456,
+      "total_trades": 9,
+      "status": "success"
+    },
+    {
+      "symbol": "MSFT",
+      "strategy": "SmaCross",
+      "initial_cash": 100000,
+      "final_value": 83921.31160480373,
+      "pnl": -16078.688395196266,
+      "pnl_pct": -16.078688395196266,
+      "sharpe_ratio": -19.849476318948227,
+      "max_drawdown": 19.234064898420357,
+      "total_trades": 6,
+      "status": "success"
+    },
+    {
+      "symbol": "MSFT",
+      "strategy": "EnhancedSmaCross",
+      "initial_cash": 100000,
+      "final_value": 89322.49242549406,
+      "pnl": -10677.507574505944,
+      "pnl_pct": -10.677507574505944,
+      "sharpe_ratio": -4.265251882199379,
+      "max_drawdown": 15.352861704893906,
+      "total_trades": 5,
+      "status": "success"
+    },
+    {
+      "symbol": "MSFT",
+      "strategy": "RSIStrategy",
+      "initial_cash": 100000,
+      "final_value": 87908.87555591932,
+      "pnl": -12091.124444080677,
+      "pnl_pct": -12.091124444080677,
+      "sharpe_ratio": -0.915638729284613,
+      "max_drawdown": 26.179587893760427,
+      "total_trades": 1,
+      "status": "success"
+    },
+    {
+      "symbol": "MSFT",
+      "strategy": "MACDStrategy",
+      "initial_cash": 100000,
+      "final_value": 86648.8234019003,
+      "pnl": -13351.1765980997,
+      "pnl_pct": -13.351176598099702,
+      "sharpe_ratio": -4.259193000573027,
+      "max_drawdown": 23.522880969338196,
+      "total_trades": 10,
+      "status": "success"
+    },
+    {
+      "symbol": "GOOGL",
+      "strategy": "SmaCross",
+      "initial_cash": 100000,
+      "final_value": 190265.9181189912,
+      "pnl": 90265.91811899119,
+      "pnl_pct": 90.2659181189912,
+      "sharpe_ratio": 1.6366625402782142,
+      "max_drawdown": 9.087290200105063,
+      "total_trades": 4,
+      "status": "success"
+    },
+    {
+      "symbol": "GOOGL",
+      "strategy": "EnhancedSmaCross",
+      "initial_cash": 100000,
+      "final_value": 114598.81382338387,
+      "pnl": 14598.813823383869,
+      "pnl_pct": 14.59881382338387,
+      "sharpe_ratio": 0.8630025682773985,
+      "max_drawdown": 10.059235301241001,
+      "total_trades": 2,
+      "status": "success"
+    },
+    {
+      "symbol": "GOOGL",
+      "strategy": "RSIStrategy",
+      "initial_cash": 100000,
+      "final_value": 136567.7355011908,
+      "pnl": 36567.73550119079,
+      "pnl_pct": 36.567735501190796,
+      "sharpe_ratio": 0.9453069769678554,
+      "max_drawdown": 2.6095757864206064,
+      "total_trades": 1,
+      "status": "success"
+    },
+    {
+      "symbol": "GOOGL",
+      "strategy": "MACDStrategy",
+      "initial_cash": 100000,
+      "final_value": 139178.07362608035,
+      "pnl": 39178.07362608035,
+      "pnl_pct": 39.17807362608035,
+      "sharpe_ratio": 7.018583070574487,
+      "max_drawdown": 16.77534773874543,
+      "total_trades": 11,
+      "status": "success"
+    },
+    {
+      "symbol": "AMZN",
+      "strategy": "SmaCross",
+      "initial_cash": 100000,
+      "final_value": 108337.84206851857,
+      "pnl": 8337.84206851857,
+      "pnl_pct": 8.33784206851857,
+      "sharpe_ratio": 0.33359684626992564,
+      "max_drawdown": 17.744931129388107,
+      "total_trades": 6,
+      "status": "success"
+    },
+    {
+      "symbol": "AMZN",
+      "strategy": "EnhancedSmaCross",
+      "initial_cash": 100000,
+      "final_value": 93645.73619172668,
+      "pnl": -6354.263808273317,
+      "pnl_pct": -6.354263808273318,
+      "sharpe_ratio": -5.187055765643731,
+      "max_drawdown": 21.657759832945988,
+      "total_trades": 4,
+      "status": "success"
+    },
+    {
+      "symbol": "AMZN",
+      "strategy": "RSIStrategy",
+      "initial_cash": 100000,
+      "final_value": 126686.47045546817,
+      "pnl": 26686.470455468167,
+      "pnl_pct": 26.686470455468164,
+      "sharpe_ratio": 0.9250556568229055,
+      "max_drawdown": 8.479326254533097,
+      "total_trades": 1,
+      "status": "success"
+    },
+    {
+      "symbol": "AMZN",
+      "strategy": "MACDStrategy",
+      "initial_cash": 100000,
+      "final_value": 113951.5287307739,
+      "pnl": 13951.528730773905,
+      "pnl_pct": 13.951528730773905,
+      "sharpe_ratio": 0.5708439450865742,
+      "max_drawdown": 15.969134005776485,
+      "total_trades": 14,
+      "status": "success"
+    },
+    {
+      "symbol": "META",
+      "strategy": "SmaCross",
+      "initial_cash": 100000,
+      "final_value": 60633.40718232168,
+      "pnl": -39366.59281767832,
+      "pnl_pct": -39.36659281767832,
+      "sharpe_ratio": -37.326607495699214,
+      "max_drawdown": 41.53205707187029,
+      "total_trades": 6,
+      "status": "success"
+    },
+    {
+      "symbol": "META",
+      "strategy": "EnhancedSmaCross",
+      "initial_cash": 100000,
+      "final_value": 71700.42710135094,
+      "pnl": -28299.572898649058,
+      "pnl_pct": -28.299572898649057,
+      "sharpe_ratio": -2.8053863040680644,
+      "max_drawdown": 30.841561750816854,
+      "total_trades": 6,
+      "status": "success"
+    },
+    {
+      "symbol": "META",
+      "strategy": "RSIStrategy",
+      "initial_cash": 100000,
+      "final_value": 93129.71360740639,
+      "pnl": -6870.286392593611,
+      "pnl_pct": -6.870286392593611,
+      "sharpe_ratio": -1.1046011282369996,
+      "max_drawdown": 27.763129584223392,
+      "total_trades": 1,
+      "status": "success"
+    },
+    {
+      "symbol": "META",
+      "strategy": "MACDStrategy",
+      "initial_cash": 100000,
+      "final_value": 86300.52601544543,
+      "pnl": -13699.47398455457,
+      "pnl_pct": -13.699473984554569,
+      "sharpe_ratio": -2.581088067645056,
+      "max_drawdown": 15.795298169884889,
+      "total_trades": 9,
+      "status": "success"
+    }
+  ],
+  "summary": {
+    "total_backtests": 20,
+    "successful": 20,
+    "best_return": "+90.27%",
+    "worst_return": "-39.37%",
+    "avg_return": "+6.89%",
+    "top_performers": [
+      {
+        "symbol": "GOOGL",
+        "strategy": "SmaCross",
+        "pnl_pct": 90.2659181189912,
+        "sharpe_ratio": 1.6366625402782142
+      },
+      {
+        "symbol": "GOOGL",
+        "strategy": "MACDStrategy",
+        "pnl_pct": 39.17807362608035,
+        "sharpe_ratio": 7.018583070574487
+      },
+      {
+        "symbol": "GOOGL",
+        "strategy": "RSIStrategy",
+        "pnl_pct": 36.567735501190796,
+        "sharpe_ratio": 0.9453069769678554
+      },
+      {
+        "symbol": "AMZN",
+        "strategy": "RSIStrategy",
+        "pnl_pct": 26.686470455468164,
+        "sharpe_ratio": 0.9250556568229055
+      },
+      {
+        "symbol": "AAPL",
+        "strategy": "EnhancedSmaCross",
+        "pnl_pct": 21.291233969494,
+        "sharpe_ratio": 0.9265106878673857
+      }
+    ]
+  }
+}
